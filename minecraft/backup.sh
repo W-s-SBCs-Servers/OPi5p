@@ -31,7 +31,8 @@ for SCREEN_NAME in $MINECRAFT_SCREENS; do
 
     # Archiver le dossier du serveur
     DATE=$(date '+%Y-%m-%d_%H-%M-%S')
-    tar -czvf "${BACKUP_DIR}/${SCREEN_NAME}_${DATE}.tar.gz" "$SCREEN_NAME"
+    SERVER_FOLDER=$(echo $SCREEN_NAME | awk -F'-' '{print $NF}')
+    tar -czvf "${BACKUP_DIR}/${SCREEN_NAME}_${DATE}.tar.gz" $SERVER_FOLDER
 done
 
 # Relancer les serveurs
