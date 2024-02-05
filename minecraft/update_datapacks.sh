@@ -8,9 +8,6 @@ MINECRAFT_SCREENS=$(screen -ls | grep -oE '\S+\.(\S+)' | awk -F'.' '{print $2}')
 
 # Boucle à travers tous les screen Minecraft
 for SCREEN_NAME in $MINECRAFT_SCREENS; do
-    # Chemin du dépôt GitHub
-    GITHUB_REPO="https://github.com/W-s-SBCs-Servers/${SCREEN_NAME}"
-
     # Dossier des datapacks du serveur
     DATAPACKS_DIR="$SERVERS_DIR/$SCREEN_NAME/world/datapacks"
 
@@ -51,3 +48,4 @@ for SCREEN_NAME in $MINECRAFT_SCREENS; do
         # Revenir au dossier des datapacks
         cd $DATAPACKS_DIR
     done
+done
