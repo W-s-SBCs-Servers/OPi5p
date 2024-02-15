@@ -9,6 +9,8 @@
 0 4 1 * * /home/servers/minecraft/reset_dimensions.sh
 
 # Calcul du score d'advancements pour le serveur public
-0 */3 8-23 * * python3 minecraft/advancements-getter/main.py "/home/servers/minecraft/public/world/advancements/*.json" > /home/servers/minecraft/public/advancement_scores.txt
-30 */3 8-23 * * python3 minecraft/advancements-getter/scoreboard.py "/home/servers/minecraft/public/advancement_scores.txt" minecraft-public advancement_scores
+0 */6 6-22 * 1-5 python3 minecraft/advancements-getter/main.py "/home/servers/minecraft/amplified_public/world/advancements/*.json" > /home/servers/minecraft/amplified_public/advancement_scores.txt
+30 */6 6-22 * 1-5 python3 minecraft/advancements-getter/scoreboard.py "/home/servers/minecraft/amplified_public/advancement_scores.txt" minecraft-amplified_public advancement_scores
+0 */3 * * 0,6 python3 minecraft/advancements-getter/main.py "/home/servers/minecraft/amplified_public/world/advancements/*.json" > /home/servers/minecraft/amplified_public/advancement_scores.txt
+30 */3 * * 0,6 python3 minecraft/advancements-getter/scoreboard.py "/home/servers/minecraft/amplified_public/advancement_scores.txt" minecraft-amplified_public advancement_scores
 ```
