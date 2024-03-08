@@ -1,9 +1,14 @@
 ## Crontab :
 
 ```sh
+# Lancement des serveurs au démarrage du serveur
 @reboot sleep 30 && /home/servers/minecraft/startup.sh
-0 5 * * * /home/servers/minecraft/backup.sh
-0 8-22 * * * /home/servers/minecraft/update_datapacks.sh
+
+# Gestion des backups
+0 5 * * * nohup /home/servers/minecraft/backup.sh && nohup /home/servers/minecraft/restart &
+
+# Mise à jour automatique des datapacks
+0 12 * * * /home/servers/minecraft/update_datapacks.sh
 
 # Reinitialisation de l'end touts les mois
 0 4 1 * * ~/minecraft/reset_dimensions.sh
