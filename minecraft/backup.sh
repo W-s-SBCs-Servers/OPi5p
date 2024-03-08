@@ -6,7 +6,7 @@ export TZ="America/New_York"
 # Définition du dossier des serveurs Minecraft
 SERVERS_DIR="/home/servers/minecraft"
 
-# Définition dossier des backups
+# Définition du dossier des backups
 BACKUP_DIR="/home/servers/backups"
 
 # Création du dossier de backups si il n'existe pas
@@ -38,5 +38,5 @@ for SCREEN_NAME in $MINECRAFT_SCREENS; do
 
     # Archiver le dossier du serveur
     DATE=$(date '+%Y-%m-%d_%H-%M-%S')
-    tar -czvf "${BACKUP_DIR}/${SCREEN_NAME}_${DATE}.tar.gz" $SERVER_FOLDER --exclude="wget-log"
+    tar -czvf "${BACKUP_DIR}/${SCREEN_NAME}_${DATE}.tar.gz" --exclude="wget-log" $SERVER_FOLDER
 done
