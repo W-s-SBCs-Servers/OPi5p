@@ -5,7 +5,7 @@
 @reboot sleep 30 && /home/servers/minecraft/startup.sh
 
 # Gestion des backups
-0 5 * * * nohup /home/servers/minecraft/backup.sh && nohup /home/servers/minecraft/restart &
+0 5 * * * nohup /home/servers/minecraft/backup.sh && nohup /home/servers/minecraft/startup.sh &
 
 # Mise à jour automatique des datapacks
 0 12 * * * /home/servers/minecraft/update_datapacks.sh
